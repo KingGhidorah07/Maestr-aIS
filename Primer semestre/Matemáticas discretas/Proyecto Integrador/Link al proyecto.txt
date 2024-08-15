@@ -1,0 +1,7 @@
+https://drive.google.com/drive/folders/1Fkn_EJPDYRaDHCwqjJ-DaUfCbuNgNyda?usp=sharing
+
+El archivo que se llama algoritmosMenu.py contiene todos los algoritmos en un menú,
+
+El archivo de la presentación se llama presentación algoritmos
+
+Por último el video es el que lleva por nombre VIDEO FINAL
