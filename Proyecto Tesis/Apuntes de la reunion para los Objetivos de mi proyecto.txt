@@ -1,0 +1,13 @@
+Vamos a diseñar nuestro modelo blockchain bajo el concepto etherium, porqué se trabaja con solidity y es un lenguaje hecho esclusivamente para eso y es de codigo abierto.
+
+
+Se implementa un smartcontract que nos permite generar los certificados digitales
+
+
+HyperLedger fabric, porqué lo utiliza IBM y al analizar muchos artículos
+
+
+Vamos utiizar solidity para implementar el contrato
+
+
+Poner a funcionar 
