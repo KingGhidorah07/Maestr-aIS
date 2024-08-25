@@ -8,12 +8,12 @@ tablas <- function(num){
     cat("Tabla de multiplicar del ",i, "\n")
     #print(i)
     for(j in 1:10){
-      
-      cat(i, "*", j, "\n")
+      res = i*j
+      cat(i, "*", j, "=", res ,"\n")
     }
   }
 }
-tablas(5)
+tablas(100)
 
 #Reto 6
 x <- seq(1, 20, by = 0.05)
@@ -24,6 +24,7 @@ for(i in 1:largo){
 }
 promedio = (media / largo)
 promedio
+
 length(x)
 
 
