@@ -8,6 +8,8 @@ BostonHousing[sample(1:nrow(BostonHousing), 40), "ptratio"] <- NA
 
 head(BostonHousing)
 
+temp2 <- BostonHousing
+
 #Reto 1
 temp1 <- BostonHousing
 temp1[sample(1:nrow(temp1), 50), "crim"] <- NA
@@ -58,9 +60,8 @@ set.seed(100)
 BostonHousing[sample(1:nrow(BostonHousing), 40), "rad"] <- NA
 BostonHousing[sample(1:nrow(BostonHousing), 40), "ptratio"] <- NA
 
+install.packages("DMwR")
 library(DMwR)
-knnoutput <- knnImputation(BostonHousing[,!names(BostonHousing) %in% "medv"])
-anyNA(knnoutput)
-
-
+knnOutput <- knnImputation(BostonHousing[,!names(BostonHousing) %in% "medv"])
+View(BostonHousing)
 
