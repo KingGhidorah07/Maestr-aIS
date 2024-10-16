@@ -5,6 +5,8 @@ public class Canino extends Animal{
     private byte longevidad;
     private String Alimento;
 
+
+
     // Constructor
     public Canino(String nombre, String raza, String color, byte longevidad, String alimento) {
         super(nombre, raza, color);
