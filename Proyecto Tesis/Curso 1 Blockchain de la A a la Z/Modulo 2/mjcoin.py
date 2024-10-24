@@ -2,6 +2,8 @@
 import datetime
 import hashlib
 import json
+from urllib import request
+
 from flask import Flask, jsonify
 import requests
 from uuid import uuid4
@@ -96,16 +98,18 @@ class Blockchain:
             return True
         return False
 
+
 # Parte 2 - Minado de un Bloque de la Cadena
 # Crear una aplicación web
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
 
-#Crear la dirección del nodo en el puerto 5000
+# Crear la dirección del nodo en el puerto 5000
 node_address = str(uuid4()).replace('-', '')
 
 # Crear una Blockchain
 blockchain = Blockchain()
+
 
 # Minar un nuevo bloque
 @app.route('/mine_block', methods=['GET'])
@@ -126,6 +130,7 @@ def mine_block():
     }
     return jsonify(response), 200
 
+
 # Obtener la cadena de bloques al completo
 @app.route('/get_chain', methods=['GET'])
 def get_chain():
@@ -135,6 +140,24 @@ def get_chain():
     }
     return jsonify(response), 200
 
+
+@app.route('/is_valid', methods=['GET'])
+def is_valid():
+    is_valid = blockchain.is_chain_valid(blockchain.chain)
+    if is_valid:
+        response = {'message': 'Chain is valid'}
+    else:
+        response = {'message': 'Chain is invalid'}
+    return jsonify(response), 200
+
+
+#Añadir una nuva transacción a la cadena de bloques
+@app.route('/add_transaction', methods=['POST'])
+def add_transaction():
+    json = request.get_json()
+    transaction_keys = ['sender', 'receiver', 'amount']
+    if not all(key in json for key in transaction_keys):
+        response = {'message': 'Faltan algunos elemenost de la transacción'}
 
 # Ejecutar la app
 app.run(host='0.0.0.0', port=5000)
